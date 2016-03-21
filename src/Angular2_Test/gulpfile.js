@@ -1,4 +1,4 @@
-﻿/// <binding AfterBuild='moveToLibs' />
+﻿/// <binding AfterBuild='moveToLibs, moveToWebroot' />
 var gulp = require('gulp');
 
 gulp.task('moveToLibs', function (done) {
@@ -19,4 +19,11 @@ gulp.task('moveToLibs', function (done) {
     gulp.src([
       'node_modules/bootstrap/dist/css/bootstrap.css'
     ]).pipe(gulp.dest('./wwwroot/libs/css'));
+});
+
+gulp.task('moveToWebroot', function (done) {
+    gulp.src([
+      'scripts/*.js'
+    ]).pipe(gulp.dest('./wwwroot/appScripts/Scripts/'));
+       
 });

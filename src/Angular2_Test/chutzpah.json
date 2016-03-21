@@ -20,9 +20,10 @@
   "Tests": [
     { "Path": "Testscripts" },
     {
-     
+
       "Includes": [ "testscripts/personTest.ts" ]
     },
+    { "Path": "*/wwwroot/appScripts/testscripts", "Includes": ["*test.js"]},
     {
     
       "Excludes": [
