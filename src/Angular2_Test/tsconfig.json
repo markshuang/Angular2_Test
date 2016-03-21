@@ -5,12 +5,14 @@
     "module": "commonjs",
     "noEmitOnError": true,
     "noImplicitAny": false,
-    "outDir": "./wwwroot/appScripts/",
+
     "removeComments": false,
     "sourceMap": true,
-    "target": "es5"
+    "target": "es5",
+    "outDir": "./wwwroot/appScripts/"
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "typings"
   ]
 }
