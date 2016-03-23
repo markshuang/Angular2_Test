@@ -9,14 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('angular2/core');
+var router_1 = require('angular2/router');
+var sample_components_1 = require('./sample.components');
 var AppComponent = (function () {
     function AppComponent() {
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: 'A2 App got loaded!'
-        }), 
+            template: " \n         <h3>My First Angular 2 App</h3> \n  \n         <nav class=\"btn-group\" role=\"group\" aria-label=\"...\"> \n             <a href=\"\" [routerLink]=\"['Sample']\" class=\"btn btn-default\">Sample</a> \n             <a href=\"\" [routerLink]=\"['AnotherSample']\" class=\"btn btn-default\">Another Sample</a> \n         </nav> \n          \n         <router-outlet></router-outlet> \n     ",
+            directives: [router_1.ROUTER_DIRECTIVES]
+        }),
+        router_1.RouteConfig([
+            { path: '/sample', name: 'Sample', component: sample_components_1.SampleComponent, useAsDefault: true },
+            { path: '/another-sample', name: 'AnotherSample', component: sample_components_1.AnotherSampleComponent },
+            { path: '/**', redirectTo: ['Sample'] }
+        ]), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;
